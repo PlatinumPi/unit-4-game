@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <audio src="assets/audio/button.mp3" id="button-audio"></audio>
+    <audio src="assets/audio/lose.mp3" id="lose-audio"></audio>
+    <audio src="assets/audio/win.mp3" id="win-audio"></audio>
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4 text-center text-monospace" id="target-score"></h1>
+        <hr class="my-4">
+        <p class="lead text-center text-monospace">The crystals below have an unknown value associated to them. It is
+            your job to determine the values of the crystals in order to reach the value above. Good luck!</p>
+    </div>
+
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-md-3 text-center">
+
+                <div class="crystal" id="blue-crystal">
+                    <img src="assets/images/blue-crystal.png" alt="Blue Crystal" height="150" width="150">
+                </div>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+
+                <div class="crystal" id="red-crystal">
+                    <img src="assets/images/red-crystal.png" alt="Red Crystal" height="150" width="150">
+                </div>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+
+                <div class="crystal" id="green-crystal">
+                    <img src="assets/images/green-crystal.png" alt="Green Crystal" height="150" width="150">
+                </div>
+
+            </div>
+
+            <div class="col-md-3 text-center">
+
+                <div class="crystal" id="yellow-crystal">
+                    <img src="assets/images/yellow-crystal.png" alt="Yellow Crystal" height="150" width="150">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 text-center">
+
+                <div class="jumbotron jumbotron-fluid">
+                    <h2 class="display-4 text-center text-monospace" id="my-score">Your Guess: 0</h2>
+                </div>
+
+            </div>
+
+            <div class="col-md-6 text-center">
+
+                <div class="jumbotron jumbotron-fluid">
+                    <h2 class="display-4 text-center text-monospace" id="guesses-left">Guesses: 0</h2>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
