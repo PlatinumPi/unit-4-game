@@ -13,13 +13,7 @@ function randNum(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function pauseSound() {
-    document.getElementById('button-audio').pause();
-    document.getElementById('lose-audio').pause();
-    document.getElementById('win-audio').pause();
-}
-
-// Global variable declaration
+// Global variable declarations
 var guesses;
 var result;
 var userGuess = 0;
@@ -29,6 +23,8 @@ var greenCrystalVal = randNum(1, 20);
 var yellowCrystalVal = randNum(1, 20);
 var CrysMultiplier = [randNum(2, 4), randNum(2, 4), randNum(2, 4), randNum(2, 4)];
 var guessLeft = CrysMultiplier[0] + CrysMultiplier[1] + CrysMultiplier[2] + CrysMultiplier[3];
+
+$("#guesses-left").append("Guesses Left: " + guessLeft);
 
 // Function that always creates possible outcomes
 function targetGen() {
@@ -44,16 +40,16 @@ function targetGen() {
 var genTarget = targetGen();
 
 // Updates UI with target score
-$("#target-score").append(genTarget);
+$("#target-score").append("Target Number: " + genTarget);
 
 // Function that determines outcome of the game
 function gameEnd() {
     if (guesses === 0 && userGuess < genTarget) {
-        console.log("No more Guesses! Too Low!");
+        alert("No more Guesses! Too Low! You Lost!");
     } else if (userGuess > genTarget) {
-        console.log("No more Guesses! Too High!");
+        alert("No more Guesses! Too High! You Lost!");
     } else if (guesses === 0 && userGuess == genTarget) {
-        console.log("You won!");
+        alert("Congrats! You won!");
     }
 }
 
@@ -65,6 +61,11 @@ function buttonAudio() {
     } else {
         audioCheck.currentTime = 0;
     }
+}
+
+function loseAudio() {
+    var audioPlay = document.getElementById('lose-audio');
+    audioPlay.play();
 }
 
 // Function for Blue Crystal onclick event
